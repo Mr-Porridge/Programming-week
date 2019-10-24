@@ -23,8 +23,8 @@ def balanced_binary_tree(request):
 @csrf_exempt
 def huffman_encode(request):
     # 生成 csrf 数据，发送给前端
-    x = csrf(request)
-    csrf_token = x['csrf_token']
+    # x = csrf(request)
+    # csrf_token = x['csrf_token']
     """
     获取数据:
     """
