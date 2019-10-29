@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cae5301-200d-4efd-b3ab-a7cc4ad47281" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/judge/Huffman/learning.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/judge/Huffman/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/judge/Huffman/washed_simplified.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/message_board/message_operation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/src/router/message_board/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/src/views/message_board/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/timeout_decorator-0.4.1-py3.6.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/timeout_decorator-0.4.1-py3.6.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/timeout_decorator-0.4.1-py3.6.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/timeout_decorator-0.4.1-py3.6.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/timeout_decorator-0.4.1-py3.6.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/timeout_decorator/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/timeout_decorator/timeout_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prgramming_week.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/programming_week.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/judge/BalancedBinaryTree/balanced_binary_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/judge/BalancedBinaryTree/balanced_binary_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/judge/Huffman/hftree.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/judge/Huffman/hftree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_learning/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_learning/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fronted/src/components/sidebar/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/src/components/sidebar/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fronted/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fronted/src/views/huffman/dictionary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/src/views/huffman/dictionary.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fronted/src/views/huffman/huffman_decode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/src/views/huffman/huffman_decode.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fronted/src/views/huffman/huffman_encode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/src/views/huffman/huffman_encode.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +61,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="Vue Single File Component" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -50,21 +73,24 @@
     <scope name="Unnamed" pattern="" />
   </component>
   <component name="ProjectId" id="1SbD7R2DXWkwSGAyCk69PlLZmU7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/fronted/src/router/hffman" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/judge/Huffman" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\django_learning\backend\judge\Huffman" />
+      <recent name="D:\django_learning\fronted\src\router\message_board" />
+      <recent name="D:\django_learning\fronted\src\views\message_board" />
       <recent name="D:\django_learning\fronted\src\router\hffman" />
       <recent name="D:\django_learning\learning_backend\judge" />
-      <recent name="D:\django_learning\fronted\src\views\homepage" />
-      <recent name="D:\django_learning\fronted\src\router\homepage" />
-      <recent name="D:\django_learning\fronted\src\views\huffman" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -80,8 +106,30 @@
     </option>
   </component>
   <component name="RunManager" selected="Django server.django_learning">
+    <configuration name="balanced_binary_tree" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="programming_week" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/judge/BalancedBinaryTree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/judge/BalancedBinaryTree/balanced_binary_tree.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="hftree" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="prgramming_week" />
+      <module name="programming_week" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -102,8 +150,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="lll" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="programming_week" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/judge/Huffman" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/judge/Huffman/lll.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="django_learning" type="Python.DjangoServer" factoryName="Django server">
-      <module name="prgramming_week" />
+      <module name="programming_week" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -129,10 +199,14 @@
     <list>
       <item itemvalue="Django server.django_learning" />
       <item itemvalue="Python.hftree" />
+      <item itemvalue="Python.lll" />
+      <item itemvalue="Python.balanced_binary_tree" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.balanced_binary_tree" />
         <item itemvalue="Python.hftree" />
+        <item itemvalue="Python.lll" />
       </list>
     </recent_temporary>
   </component>
@@ -153,6 +227,10 @@
       <workItem from="1571898041253" duration="304000" />
       <workItem from="1571898380074" duration="6183000" />
       <workItem from="1571910686061" duration="730000" />
+      <workItem from="1572221766401" duration="76000" />
+      <workItem from="1572227675658" duration="6895000" />
+      <workItem from="1572237304173" duration="30013000" />
+      <workItem from="1572315946731" duration="11903000" />
     </task>
     <servers />
   </component>
@@ -172,10 +250,16 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/django_learning$balanced_binary_tree.coverage" NAME="balanced_binary_tree Coverage Results" MODIFIED="1571896567133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learning_backend/judge/BalancedBinaryTree" />
+    <SUITE FILE_PATH="coverage/programming_week$hftree.coverage" NAME="hftree Coverage Results" MODIFIED="1572257926657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/judge/Huffman" />
     <SUITE FILE_PATH="coverage/django_learning$hftree.coverage" NAME="hftree Coverage Results" MODIFIED="1571887041185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learning_backend/judge/Huffman" />
+    <SUITE FILE_PATH="coverage/programming_week$balanced_binary_tree.coverage" NAME="balanced_binary_tree Coverage Results" MODIFIED="1572331233793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/judge/BalancedBinaryTree" />
     <SUITE FILE_PATH="coverage/prgramming_week$hftree.coverage" NAME="hftree Coverage Results" MODIFIED="1571899487232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/judge/Huffman" />
+    <SUITE FILE_PATH="coverage/programming_week$lll.coverage" NAME="lll Coverage Results" MODIFIED="1572250383751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/judge/Huffman" />
     <SUITE FILE_PATH="coverage/prgramming_week$hftree__1_.coverage" NAME="hftree (1) Coverage Results" MODIFIED="1571899475468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/judge/Huffman" />
   </component>
 </project>

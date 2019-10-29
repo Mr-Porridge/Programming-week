@@ -4,6 +4,8 @@
 3、预防基于单词频度攻击
 """
 import operator
+import random
+import pymysql
 
 
 class Tree:
@@ -52,6 +54,7 @@ def print_nodes(nodes: list):
 
 
 def create_huffman_tree(leaves: list):
+    # 之遍历一次就找到最小的两个值
     while len(leaves) > 1:
         quick_sort(leaves)
         # print_nodes(leaves)
@@ -87,20 +90,30 @@ def huffman_encode_word(huffman_tree: Tree, item: str, codes: str = "", ans=""):
         return ans
 
 
-def huffman_encode(huffman_tree: Tree, plain: str):
-    ans = ""
-    for item in plain.split(" "):
-        ans += huffman_encode_word(huffman_tree, item)  # 可以加修饰符
-    return ans
+def huffman_encode(code_book, plain: str, num: str = ""):
+    ans = num
+    try:
+        for item in plain.split(" "):
+            ans += code_book[item]  # 可以加修饰符
+        return ans
+    except KeyError as err:
+        # 加入语料库学习区域
+        learn = open('D:\\django_learning\\backend\\judge\\Huffman\\learning.txt', 'a+')
+        learn.write(str(err) + " ")
+        learn.close()
+        return "对不起！我还在学习新词汇呢！\n\n" + str(err) + "这个单词我还不认识呢！试试其他的吧！"
 
 
-def huffman_decode(huffman_tree: Tree = None, dic=None, encoded: str = "", ans=""):
+# 解密直接使用已有的密码本解密
+def huffman_decode(dic=None, encoded: str = "", ans=""):
     if dic is None:
         dic = {"Empty": "Code_book is empty!"}
         # print(dic)
     else:
         print(dic)
+
     while len(encoded) > 0:
+        length = len(encoded)
         for x in range(0, len(encoded) + 1):
             segment = encoded[0:x]
             # print("Segment is: ", segment)
@@ -109,57 +122,126 @@ def huffman_decode(huffman_tree: Tree = None, dic=None, encoded: str = "", ans="
                 ans += dic[segment] + " "
                 encoded = encoded[x:]
                 break
+        if len(encoded) == length:
+            return "Error Huffman Code！"
     return ans
 
 
-# 建树封装
-def initializing():
-    dictionary = {
-        "I": 8,
-        "LOVE": 12,
-        "YOU": 4,
-        "BABY": 15,
-        "MY": 7,
-    }
+def dictionary_init():
+    dic = {}
+    # source = open('D:/porridge/playground/divide/washed_simplified.txt')
+    source = open('D:\\django_learning\\backend\\judge\\Huffman\\washed_simplified.txt')
+    words = source.read()
+    for item in words.split(" "):
+        dic[item] = round(random.random(), 2)
+    # print(dic)
+    return dic
+
+
+def code_book_load(dic, method: int, num: str = "00"):
+    # method 用于区分加密解密的密码本读取方法 调换 Key 和 Value 位置，方便进行加密解密
+    # 1:加密
+    # 0:解密
+    try:
+        db = pymysql.connect(host="127.0.0.1", user="root", passwd="078406aaa", db="code_book", charset='utf8')
+    except RuntimeError as err:
+        db = None
+        print("Could not connect to mysql server", err)
+    cursor = db.cursor()
+    sql = "SELECT * FROM three_thousand" + num
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    if method == 0:
+        for item in results:
+            dic[item[2]] = item[1]
+    if method == 1:
+        for item in results:
+            dic[item[1]] = item[2]
+    print(dic)
+    return dic
+
+
+# 存储字典
+def save_code_book(code_dic, table_name: str = "unnamed"):
+    # 连接数据库
+    try:
+        db = pymysql.connect(host="127.0.0.1", user="root", passwd="078406aaa", db="code_book", charset='utf8')
+    except RuntimeError as err:
+        db = None
+        print("Could not connect to mysql server", err)
+    cursor = db.cursor()
+    # 方便调试起见 每次建表时先删除已有表格
+    # cursor.execute("DELETE FROM codes")
+    sql = "CREATE TABLE IF NOT EXISTS `code_book`.`" + table_name + "` (`id` INT NOT NULL,`word` VARCHAR(255) NOT NULL,`code` VARCHAR(255) NULL,PRIMARY KEY (`id`));"
+    cursor.execute(sql)
+    i = 0
+    for item in code_dic.keys():
+        value = (i, code_dic[item], item)
+        print(value)
+        sql = "INSERT INTO " + table_name + "(id, word, code)VALUES(%s,%s,%s)"  # 数据个数要和 %s 个数一致
+        cursor.execute(sql, value)  # 执行sql语句
+        i += 1
+        db.commit()
+    cursor.close()  # 关闭连接
+
+
+# 新建密码本建树封装
+def initializing(name: str = "unnamed"):
+    # 读取文本文件中的语料库
+    dictionary = dictionary_init()
     code_book = {}  # 建树生成后的密码字典
     leafs = []  # 结点链表初始化
     # 根据语料库中的单词构造结点链表
     for word in dictionary:
         node = Tree(val=word, w=dictionary[word])
         leafs.append(node)
-    ht = create_huffman_tree(leafs)  # 用结点链表建树
+    # 用结点链表建树
+    ht = create_huffman_tree(leafs)
     text = dictionary.keys()
     for word in text:
         code_book[huffman_encode_word(ht, word)] = word
+    # 将密码本保存
+    save_code_book(code_book, name)
     return ht
 
 
 # 密码字典封装
-def cipher_book():  # 之后使用数据库读取的方法
-    dictionary = {
-        "I": 8,
-        "LOVE": 12,
-        "YOU": 4,
-        "BABY": 15,
-        "MY": 7,
-    }
-    code_book = {}  # 建树生成后的密码字典
-    text = dictionary.keys()
-    for word in text:
-        code_book[huffman_encode_word(initializing(), word)] = word
+def cipher_book(name: str = "00"):  # 已经使用数据库读取的方法
+    code_book = code_book_load({}, 0, name)
+    # print(code_book)
+    return code_book
+
+
+def show_cipher_book(name: str = "00"):
+    book = code_book_load({}, 0, name)
+    code_book = []
+    i = 0
+    for item in book.keys():
+        code_book.append({
+            "id": i,
+            "code": item,
+            "word": book[item]})
+        i += 1
+    print(code_book)
     return code_book
 
 
 # 加密封装
 def encode(user_input: str):  # 需要进行检查或者分词 再议
-    return huffman_encode(initializing(), user_input)
+    num = str(round(random.random())) + str(round(random.random()))
+    return huffman_encode(code_book_load({}, 1, num), user_input, num)
 
 
 # 解密封装
 def decode(user_input: str):
-    return huffman_decode(initializing(), cipher_book(), user_input)
+    return huffman_decode(cipher_book(user_input[0:2]), user_input[2:])
 
+# 创立四张密码表
+# for item in ["three_thousand00", "three_thousand01", "three_thousand10", "three_thousand11"]:
+#    initializing(item)
 
-# print(encode("BABY I LOVE YOU"))
-# print(decode("110010010"))
+# print(encode("THIS AFTERNOON I WILL FINISH IT LOVE YOU"))
+# print(decode(encode("THIS AFTERNOON I WILL FINISH IT LOVE YOU")))
 # print(cipher_book())
+# code_book_load({})
+# show_cipher_book()

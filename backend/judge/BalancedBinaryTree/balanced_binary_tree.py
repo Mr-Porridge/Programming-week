@@ -36,7 +36,7 @@ class Tree:
             self.lChild.pre_order_travel()
             self.rChild.pre_order_travel()
 
-    def treeDepth(self):
+    def treeDepth(self) -> int:
         if (self.lChild is None) & (self.rChild is None):
             return 0
         leftDepth = self.lChild.treeDepth()
@@ -120,14 +120,14 @@ def balanced_binary_tree(binary_tree: Tree):
 # 判断二叉树是否为二叉平衡树
 def is_bst_balanced(binary_tree: Tree):
     if binary_search_tree(binary_tree):
-        # print("The tree is a Binary Search Tree! ")
+        print("The tree is a Binary Search Tree! ")
         if balanced_binary_tree(binary_tree):
-            # print("The Binary Search Tree is a Balanced Binary Tree! ")
+            print("The Binary Search Tree is a Balanced Binary Tree! ")
             return True
         else:
             return False
     else:
-        # print("The tree is not a Binary Search Tree! Nor a Balanced Binary Tree! ")
+        print("The tree is not a Binary Search Tree! Nor a Balanced Binary Tree! ")
         return False
 
 
@@ -160,6 +160,7 @@ def B17040425():
 
 
 def balanced(user_input: str) -> list:
+    user_input += ",#,#,#,#,#,#,#,#"
     pre_input_list = user_input.split(",")
     bt = Tree()  # 建树根
     bt.pre_create(pre_input_list)  # 先序建树
@@ -168,6 +169,6 @@ def balanced(user_input: str) -> list:
     bal = is_bst_balanced(bt)  # 判断输入的树是否为平衡二叉树
     return [bst, bal]
 
-
 # print(type("2,#,#"))
 # print(balanced("2,#,#"))
+B17040425()

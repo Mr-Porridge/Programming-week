@@ -9,12 +9,12 @@
       route=true
     >
       <el-menu-item index="1">
-        <i class="el-icon-menu"></i>
+        <i class="el-icon-cherry"></i>
         <span slot="title">A6-平衡二叉树</span>
       </el-menu-item>
       <el-submenu index="2">
         <template slot="title">
-          <i class="el-icon-location"></i>
+          <i class="el-icon-lock"></i>
           <span>B6-哈夫曼加密</span>
         </template>
         <el-menu-item-group>
@@ -28,9 +28,14 @@
         </el-menu-item-group>
       </el-submenu>
       <el-menu-item index="3">
+        <i class="el-icon-message"></i>
+        <span slot="title">留言板</span>
+      </el-menu-item>
+      <el-menu-item index="4">
         <i class="el-icon-setting"></i>
         <span slot="title">后台管理</span>
       </el-menu-item>
+
     </el-menu>
   </el-col>
 
@@ -57,40 +62,48 @@
                         this.$router.push({
                             path: '/balanced',
                             name: 'balanced',
-                            params: {page:'1'},
+                            params: {page: '1'},
                         });
                         break;
                     case '2-1':
                         this.$router.push({
                             path: '/balanced',
                             name: 'balanced',
-                            params: {page:'2-1'},
+                            params: {page: '2-1'},
                         });
                         break;
                     case '2-2':
                         this.$router.push({
                             path: '/encode',
                             name: 'encode',
-                            params: {page:'2-2'},
+                            params: {page: '2-2'},
                         });
                         break;
                     case '2-3':
                         this.$router.push({
                             path: '/dictionary',
                             name: 'dictionary',
-                            params: {page:'2-3'},
+                            params: {page: '2-3'},
                         });
                         break;
                     case '2-4':
                         this.$router.push({
                             path: '/decode',
                             name: 'decode',
-                            params: {page:'2-4'},
+                            params: {page: '2-4'},
                         });
                         break;
                     case '3':
+                        this.$router.push({
+                            path: '/message',
+                            name: 'message',
+                            params: {page: '3'},
+                        });
+                        break;
+                    case '4':
                         window.location.href = "http://localhost:8000/admin";
                         break;
+
                 }
             }
         },

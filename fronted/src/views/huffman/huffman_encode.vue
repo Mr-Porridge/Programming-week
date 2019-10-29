@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header>哈夫曼加密</el-header>
+    <el-header>留言板</el-header>
     <el-container>
       <el-aside width="210px">
         <sidebar style="width: 211px"></sidebar>
@@ -10,7 +10,7 @@
           <div style="margin: 5px">
             <el-form :inline="true" class="demo-form-inline" label-width="120px" label-position="left">
               <el-form-item label="输入明文">
-                <el-input v-model="userInput" placeholder="请输入英文句子"></el-input>
+                <el-input type="textarea" autosize v-model="userInput" placeholder="请输入英文句子"></el-input>
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="encodeText()">加密</el-button>
@@ -22,7 +22,7 @@
           <div style="margin: 5px;">
             <el-form label-position="left" label-width="120px">
               <el-form-item label="密文">
-                <el-input v-model="ans" placeholder="点击判断按钮查看结果"></el-input>
+                <el-input type="textarea" autosize v-model="ans" placeholder="点击判断按钮查看结果"></el-input>
               </el-form-item>
             </el-form>
           </div>
@@ -46,7 +46,7 @@
         data() {
             return {
                 userInput: '',
-                ans:''
+                ans: ''
             };
         },
         methods: {
@@ -60,7 +60,7 @@
                     data: qs.stringify(userInputData),
                 }).then((res) => {
                     console.log(res);
-                    this.ans=res.data
+                    this.ans = res.data
                 });
             }
         }

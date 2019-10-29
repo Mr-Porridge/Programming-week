@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'^balanced_binary_tree', views.balanced_binary_tree),
     url(r'^huffman_encode', views.huffman_encode),
     url(r'^huffman_decode', views.huffman_decode),
-    url(r'^cipher_book', views.cipher_book),
+    url(r'^cipher', views.cipher),
+    url(r'^message_save', views.message_save),
+    url(r'^message_load', views.message_load),
 ]

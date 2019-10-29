@@ -5,6 +5,7 @@ import BalancedRouter from './balanced_binary_tree'
 import HuffmanEncodeRouter from './hffman/encode'
 import HuffmanDecodeRouter from './hffman/decode'
 import HuffmanDictionary from './hffman/dictionary'
+import MessageBoardRouter from  './message_board'
 
 Vue.use(Router);
 
@@ -19,5 +20,6 @@ export default new Router({
     HuffmanEncodeRouter,
     HuffmanDecodeRouter,
     HuffmanDictionary,
+    MessageBoardRouter,
   ]
 })

@@ -4,8 +4,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
-from backend.judge.Huffman.hftree import encode, decode, cipher_book
+from backend.judge.Huffman.hftree import encode, decode, show_cipher_book
 from backend.judge.BalancedBinaryTree.balanced_binary_tree import balanced
+from backend.message_board.message_operation import mes_to_sql, mes_load
 
 
 def index(request):
@@ -39,9 +40,22 @@ def huffman_encode(request):
 @csrf_exempt
 def huffman_decode(request):
     # 简化过程 人生苦短
-    return HttpResponse(decode(request.POST["user_input"]))
+    result = decode(request.POST["user_input"])
+    return HttpResponse(result)
 
 
 @csrf_exempt
-def cipher_book():
-    return HttpResponse(json.dumps(cipher_book))
+def cipher(request):
+    return HttpResponse(json.dumps(show_cipher_book(request.POST["user_input"])))
+
+
+@csrf_exempt
+def message_save(request):
+    print(request.POST["user_input"], request.POST["friend_name"], request.POST["encoded_text"])
+    mes_to_sql(request.POST["friend_name"], request.POST["user_input"], request.POST["encoded_text"])
+    return HttpResponse("HELLO")
+
+
+@csrf_exempt
+def message_load(request):
+    return HttpResponse(json.dumps(mes_load()))
