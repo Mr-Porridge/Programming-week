@@ -1,5 +1,5 @@
 <template>
-  <el-col class="tac">
+  <el-col>
     <el-menu
       :default-active=this.currentPage
       @select="handleSelect"
@@ -31,7 +31,11 @@
         <i class="el-icon-message"></i>
         <span slot="title">留言板</span>
       </el-menu-item>
-      <el-menu-item index="4">
+      <!--<el-menu-item index="4">
+        <i class="el-icon-magic-stick"></i>
+        <span slot="title">Family Tree</span>
+      </el-menu-item>-->
+      <el-menu-item index="5">
         <i class="el-icon-setting"></i>
         <span slot="title">后台管理</span>
       </el-menu-item>
@@ -101,6 +105,13 @@
                         });
                         break;
                     case '4':
+                        this.$router.push({
+                            path: '/tree',
+                            name: 'tree',
+                            params: {page: '4'},
+                        });
+                        break;
+                    case '5':
                         window.location.href = "http://localhost:8000/admin";
                         break;
 

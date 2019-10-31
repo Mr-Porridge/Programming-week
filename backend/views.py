@@ -4,8 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
+from backend.judge.BalancedBinaryTree.balanced_binary_tree import balanced, family_tree
 from backend.judge.Huffman.hftree import encode, decode, show_cipher_book
-from backend.judge.BalancedBinaryTree.balanced_binary_tree import balanced
 from backend.message_board.message_operation import mes_to_sql, mes_load
 
 
@@ -19,6 +19,11 @@ def index(request):
 def balanced_binary_tree(request):
     # 生成 csrf 数据，发送给前端
     return HttpResponse(json.dumps(balanced(request.POST["user_input"])))
+
+
+@csrf_exempt
+def family_tree_creat(request):
+    return HttpResponse(json.dumps(family_tree(request.POST["user_input"])))
 
 
 @csrf_exempt
@@ -39,7 +44,7 @@ def huffman_encode(request):
 
 @csrf_exempt
 def huffman_decode(request):
-    # 简化过程 人生苦短
+    # 简化过程 人生苦短 我用Python
     result = decode(request.POST["user_input"])
     return HttpResponse(result)
 

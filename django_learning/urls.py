@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^cipher', views.cipher),
     url(r'^message_save', views.message_save),
     url(r'^message_load', views.message_load),
+    url(r'^show_tree', views.family_tree_creat),
 ]

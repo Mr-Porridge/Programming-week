@@ -6,6 +6,7 @@ import HuffmanEncodeRouter from './hffman/encode'
 import HuffmanDecodeRouter from './hffman/decode'
 import HuffmanDictionary from './hffman/dictionary'
 import MessageBoardRouter from  './message_board'
+import FamilyTreeRouter from  './family_tree'
 
 Vue.use(Router);
 
@@ -21,5 +22,6 @@ export default new Router({
     HuffmanDecodeRouter,
     HuffmanDictionary,
     MessageBoardRouter,
+    FamilyTreeRouter,
   ]
 })

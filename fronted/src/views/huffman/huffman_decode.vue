@@ -6,27 +6,35 @@
         <sidebar style="width: 211px"></sidebar>
       </el-aside>
       <el-main>
-        <el-container class="checking">
-          <div style="margin: 5px">
-            <el-form :inline="true" class="demo-form-inline" label-width="120px" label-position="left">
-              <el-form-item label="输入密文">
-                <el-input v-model="userInput" type="textarea" autosize placeholder="请输入01串"></el-input>
-              </el-form-item>
-              <el-form-item>
-                <el-button type="primary" @click="decodeText()">解密</el-button>
-              </el-form-item>
-            </el-form>
-          </div>
-        </el-container>
-        <el-container class="checking">
-          <div style="margin: 5px;">
-            <el-form label-position="left" label-width="120px">
-              <el-form-item label="明文">
-                <el-input type="textarea" autosize v-model="ans" placeholder="点击解密按钮进行解密"></el-input>
-              </el-form-item>
-            </el-form>
-          </div>
-        </el-container>
+
+        <div style="margin: 5px">
+          <el-form class="demo-form-inline" label-width="8%" label-position="left">
+            <el-form-item label="输入密文">
+              <el-input
+                v-model="userInput"
+                type="textarea"
+                :autosize="{ minRows: 5, maxRows: 8}"
+                placeholder="请输入01串"></el-input>
+            </el-form-item>
+            <el-form-item style="padding-left: 40%">
+              <el-button type="primary" @click="decodeText()">解密</el-button>
+            </el-form-item>
+          </el-form>
+        </div>
+
+
+        <div style="margin: 5px;">
+          <el-form label-position="left" label-width="8%">
+            <el-form-item label="明文">
+              <el-input
+                type="textarea"
+                 :autosize="{ minRows: 5, maxRows: 8}"
+                v-model="ans"
+                placeholder="点击解密按钮进行解密"></el-input>
+            </el-form-item>
+          </el-form>
+        </div>
+
       </el-main>
     </el-container>
   </el-container>
@@ -60,7 +68,7 @@
                     data: qs.stringify(userInputData),
                 }).then((res) => {
                     console.log(res);
-                    this.ans=res.data
+                    this.ans = res.data
                 });
             }
         }

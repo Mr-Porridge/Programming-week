@@ -4,6 +4,7 @@
 2、二叉树是否为二叉搜索树（平衡二叉树是二叉搜索树的一种）
 3、二叉搜索树是否为二叉平衡树（平衡因子）
 """
+from backend.judge.BalancedBinaryTree.matroshka import family_tree
 
 
 class Tree:
@@ -62,8 +63,7 @@ def binary_search_tree(binary_tree: Tree):
             if (binary_tree.rChild.val == float("-Inf")) & (binary_tree.lChild.val != float("-Inf")):
                 if binary_tree.lChild.val < binary_tree.val:
                     # print("Matched!")
-                    binary_search_tree(binary_tree.lChild)
-                    return flag
+                    return binary_search_tree(binary_tree.lChild)
                 else:
                     # print("Not a SBT!")
                     flag = False
@@ -72,8 +72,7 @@ def binary_search_tree(binary_tree: Tree):
             elif (binary_tree.lChild.val == float("-Inf")) & (binary_tree.rChild.val != float("-Inf")):
                 if binary_tree.rChild.val > binary_tree.val:
                     # print("Matched!")
-                    binary_search_tree(binary_tree.rChild)
-                    return flag
+                    return binary_search_tree(binary_tree.rChild)
                 else:
                     # print("Not a SBT!")
                     flag = False
@@ -83,15 +82,15 @@ def binary_search_tree(binary_tree: Tree):
                 if binary_tree.lChild.val < binary_tree.val < binary_tree.rChild.val:
                     # print(binary_tree.lChild.val, binary_tree.val, binary_tree.rChild.val)
                     # print("Matched!")
-                    binary_search_tree(binary_tree.lChild)
-                    binary_search_tree(binary_tree.rChild)
-                    return flag
+                    flag1 = binary_search_tree(binary_tree.lChild)
+                    flag2 = binary_search_tree(binary_tree.rChild)
+                    return flag1 & flag2
                 else:
                     # print(binary_tree.lChild.val, binary_tree.val, binary_tree.rChild.val)
                     # print("Not a SBT!")
                     flag = False
                     return flag
-    except AttributeError as e:
+    except AttributeError as err:
         return True
 
 
@@ -137,7 +136,9 @@ def B17040425():
         "4,1,0,#,#,#,2,#,#",
         "2,1,#,#,3,#,#",
         "6,4,2,#,#,#,8,#,#",
-        "3,2,1,#,#,#,#"
+        "3,2,1,#,#,#,#",
+        "#",
+        "5,4,3,1,#,2,#,#,#,3,5,2,#,#,#,#,2,#,1,4,#,#,2,#,#",
     ]
     for i in range(len(input_castle)):
         pre_input_str = input_castle[i]  # 从前端获取输入即可
@@ -150,13 +151,11 @@ def B17040425():
         # print(binary_search_tree(bt))
         # print(bt.treeDepth())
         # balanced_binary_tree(bt)
-        print()
         is_bst_balanced(bt)  # 判断输入的树是否为平衡二叉树
-        print()
 
 
 # 命令行版本测试
-# B17040425()
+B17040425()
 
 
 def balanced(user_input: str) -> list:
@@ -165,10 +164,16 @@ def balanced(user_input: str) -> list:
     bt = Tree()  # 建树根
     bt.pre_create(pre_input_list)  # 先序建树
     bt.pre_order_travel()  # 先序遍历打印树
+    # bt.pre_order_transfer()
     bst = binary_search_tree(bt)
     bal = is_bst_balanced(bt)  # 判断输入的树是否为平衡二叉树
     return [bst, bal]
 
+
 # print(type("2,#,#"))
-# print(balanced("2,#,#"))
-B17040425()
+# print(balanced("4,2,1,#,#,4,#,#,5,#,#"))
+# B17040425()
+# FamilyTree测试
+# pre_input_str = "5,4,3,1,#,2,#,#,#,3,5,2,#,#,#,#,2,#,1,4,#,#,2,#,#"
+# print(family_tree(pre_input_str))
+
